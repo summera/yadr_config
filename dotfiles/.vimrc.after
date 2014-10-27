@@ -1,0 +1,6 @@
+colorscheme jellybeans
+
+let g:vim_arduino_serial_port = "/dev/cu.usbmodem1411"
+
+" NERD it up
+map <leader>nt :execute 'NERDTreeToggle ' . getcwd()<CR>
