@@ -16,7 +16,7 @@ if [ ! -d "$HOME/.yadr_config" ]; then
     cd "$HOME/.yadr_config"
 
     # Variables
-    backup_dir=~/.dotfiles.bak       # old dotfiles backup_dir dotfiles_directory
+    backup_dir=$HOME/.dotfiles.bak       # old dotfiles backup_dir dotfiles_directory
     files=$(ls -A dotfiles)
 
     # Create backup_dir
@@ -25,23 +25,23 @@ if [ ! -d "$HOME/.yadr_config" ]; then
     # Backup files
     for file in $files; do
       basename=$(basename $file)
-      if [ -L ~/$basename ]; then
-        rm ~/$basename
+      if [ -L $HOME/$basename ]; then
+        rm $HOME/$basename
       fi
 
-      if [ -e ~/$basename ]; then
+      if [ -e $HOME/$basename ]; then
         echo "Backing up $file"
-        mv ~/$basename $~/$basename.bak
+        mv $HOME/$basename $HOME/$basename.bak
       fi
     done
 
     # Symlink them bad mofos
     for file in $files; do
       basename=$(basename $file)
-      ln -sf dotfiles/$file ~/$basename
+      ln -sf dotfiles/$file $HOME/$basename
     done
 
-    ~/.yadr/bin/yadr/yadr-vim-add-plugin -u nanotech/jellybeans.vim
+    $HOME/.yadr/bin/yadr/yadr-vim-add-plugin -u nanotech/jellybeans.vim
 else
     echo "YADR config is already installed"
 fi
