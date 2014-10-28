@@ -30,12 +30,8 @@ if [ ! -d "$HOME/.yadr_config" ]; then
       fi
 
       if [ -e ~/$basename ]; then
-        if [ -L $backup_dir/$basename -o -e $backup_dir/$basename ]; then
-          echo "\nThere are conflicts in your $backup_dir, please clean/save old files."
-          exit 1
-        fi
-        echo "Backing up $file to $backup_dir"
-        mv ~/$basename $backup_dir
+        echo "Backing up $file"
+        mv ~/$basename $~/$basename.bak
       fi
     done
 
@@ -45,7 +41,6 @@ if [ ! -d "$HOME/.yadr_config" ]; then
       ln -sf dotfiles/$file ~/$basename
     done
 
-    PATH=$PATH:~/.yadr_config/bin
     ~/.yadr/bin/yadr/yadr-vim-add-plugin -u nanotech/jellybeans.vim
 else
     echo "YADR config is already installed"

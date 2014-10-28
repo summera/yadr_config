@@ -39,4 +39,7 @@ else
 
   # zsh-completions
   fpath=(/usr/local/share/zsh-completions $fpath)
+
+  # add custom bins
+  export PATH=$PATH:~/.yadr_config/bin
 fi
