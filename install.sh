@@ -1,15 +1,11 @@
 #!/bin/sh
 
-set -e
-set -u
-
 if [ ! -d "$HOME/.yadr" ]; then
     echo "Installing YADR for the first time"
     git clone https://github.com/skwp/dotfiles.git "$HOME/.yadr"
     cd "$HOME/.yadr"
     [ "$1" = "ask" ] && export ASK="false"
     rake install
-
 else
     echo "YADR is already installed"
 fi
@@ -40,7 +36,7 @@ if [ ! -d "$HOME/.yadr_config" ]; then
           echo "\nThere are conflicts in your $backup_dir, please clean/save old files."
           exit 1
         fi
-        echo "\nBacking up $file to $backup_dir"
+        echo "Backing up $file to $backup_dir"
         mv ~/$basename $backup_dir
       fi
     done
@@ -51,8 +47,10 @@ if [ ! -d "$HOME/.yadr_config" ]; then
       ln -sf $dir/dotfiles/$file ~/$basename
     done
 
+    ln -sf misc/safe-reattach-to-user-namespace /usr/local/bin
+    ~/.yadr/bin/yadr/yadr-vim-add-plugin -u nanotech/jellybeans.vim
 else
-    echo "\nYADR config is already installed"
+    echo "YADR config is already installed"
 fi
 
-echo "\nFinished without error!"
+echo "Finished without error!"
