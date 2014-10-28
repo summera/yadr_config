@@ -25,6 +25,13 @@ elif [[ $platform == 'linux' ]]; then
   alias sudo='sudo'
   alias nsudo='nocorrect sudo'
 
+  # symlinks
+  alias prune-symlinks='find -L . -type l -delete'
+
+  # pbcopy/pbpaste
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+
 else
   # rmtrash
   alias rm='rmtrash'
