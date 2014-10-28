@@ -45,7 +45,7 @@ if [ ! -d "$HOME/.yadr_config" ]; then
       ln -sf dotfiles/$file ~/$basename
     done
 
-    ln -sf misc/safe-reattach-to-user-namespace /usr/local/bin/safe-reattach-to-user-namespace
+    PATH=$PATH:~/.yadr_config/bin
     ~/.yadr/bin/yadr/yadr-vim-add-plugin -u nanotech/jellybeans.vim
 else
     echo "YADR config is already installed"
