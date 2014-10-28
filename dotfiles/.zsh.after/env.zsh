@@ -31,15 +31,14 @@ elif [[ $platform == 'linux' ]]; then
   # pbcopy/pbpaste
   alias pbcopy='xclip -selection clipboard'
   alias pbpaste='xclip -selection clipboard -o'
-
-else
-  # rmtrash
-  alias rm='rmtrash'
-  alias rmdir='rmdirtrash'
-
-  # zsh-completions
-  fpath=(/usr/local/share/zsh-completions $fpath)
-
-  # add custom bins
-  export PATH=$PATH:~/.yadr_config/bin
 fi
+
+# rmtrash
+alias rm='rmtrash'
+alias rmdir='rmdirtrash'
+
+# zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# add custom bins
+export PATH=$PATH:~/.yadr_config/bin
