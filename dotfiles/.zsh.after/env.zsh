@@ -31,6 +31,13 @@ elif [[ $platform == 'linux' ]]; then
   # pbcopy/pbpaste
   alias pbcopy='xclip -selection clipboard'
   alias pbpaste='xclip -selection clipboard -o'
+
+  # Echo urls instead of using browser
+  export BROWSER='echo'
+
+  # Tmuxifier
+  export PATH="$HOME/.tmuxifier/bin:$PATH"
+  eval "$(tmuxifier init -)"
 fi
 
 # rmtrash
@@ -42,3 +49,5 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # add custom bins
 export PATH=$PATH:~/.yadr_config/bin
+export JRUBY_OPTS='--dev'
+
