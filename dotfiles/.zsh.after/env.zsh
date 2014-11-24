@@ -25,29 +25,20 @@ elif [[ $platform == 'linux' ]]; then
   alias sudo='sudo'
   alias nsudo='nocorrect sudo'
 
-  # symlinks
-  alias prune-symlinks='find -L . -type l -delete'
-
-  # pbcopy/pbpaste
-  alias pbcopy='xclip -selection clipboard'
-  alias pbpaste='xclip -selection clipboard -o'
-
   # Echo urls instead of using browser
   export BROWSER='echo'
 
   # Tmuxifier
   export PATH="$HOME/.tmuxifier/bin:$PATH"
   eval "$(tmuxifier init -)"
+
+  # Host
+  export HOST='0.0.0.0'
 fi
 
 # rmtrash
 alias rm='rmtrash'
 alias rmdir='rmdirtrash'
 
-# zsh-completions
-fpath=(/usr/local/share/zsh-completions $fpath)
-
-# add custom bins
-export PATH=$PATH:~/.yadr_config/bin
+# Jruby
 export JRUBY_OPTS='--dev'
-
