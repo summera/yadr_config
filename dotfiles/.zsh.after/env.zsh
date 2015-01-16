@@ -8,18 +8,6 @@ fi
 if [[ $platform == 'darwin' ]]; then
 
 elif [[ $platform == 'linux' ]]; then
-  # pyenv
-  export PATH="$HOME/.pyenv/bin:$PATH"
-  if which pyenv > /dev/null; then
-    export PYENV_ROOT="$HOME/.pyenv"
-    eval "$(pyenv init -)"
-  fi
-
-  # nodenv
-  export PATH="$HOME/.nodenv/bin:$PATH"
-  if which nodenv > /dev/null; then
-    eval "$(nodenv init -)"
-  fi
 
   # sudo
   alias sudo='sudo'
@@ -36,9 +24,26 @@ elif [[ $platform == 'linux' ]]; then
   export HOST='0.0.0.0'
 fi
 
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+if which pyenv > /dev/null; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  eval "$(pyenv init -)"
+fi
+
+# nodenv
+export PATH="$HOME/.nodenv/bin:$PATH"
+if which nodenv > /dev/null; then
+  eval "$(nodenv init -)"
+fi
+
 # rmtrash
 alias rm='rmtrash'
 alias rmdir='rmdirtrash'
 
 # Jruby
 export JRUBY_OPTS='--dev'
+
+replace(){
+  ag -l $1 | xargs perl -pi -E s/$1/$2/
+}

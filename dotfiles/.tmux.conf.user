@@ -9,4 +9,4 @@ unbind -t vi-copy Enter
 bind-key -t vi-copy Enter copy-pipe "bash $HOME/.yadr_config/bin/safe-reattach-to-user-namespace pbcopy"
 
 # Status bar
-if-shell "[ -f ~/.tmux.conf.user ]" 'source ~/.tmux.conf.user.status-bar'
+if-shell "[ -f ~/.tmux.conf.user.status-bar ]" 'source ~/.tmux.conf.user.status-bar'
