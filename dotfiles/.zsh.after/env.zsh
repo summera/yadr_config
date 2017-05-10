@@ -47,3 +47,16 @@ export JRUBY_OPTS='--dev'
 replace(){
   ag -l $1 | xargs perl -pi -E s/$1/$2/
 }
+
+# vim
+alias vim='nvim'
+alias v='vim'
+
+# rails
+alias berc='bundle exec rails c'
+alias bers='bundle exec rails s'
+alias berm='bundle exec rake db:migrate'
+alias beroll='bundle exec rake db:rollback'
+alias berr='bundle exec rake routes'
+
+setopt auto_cd
