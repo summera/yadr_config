@@ -2,7 +2,7 @@
 
 if [ ! -d "$HOME/.yadr" ]; then
     echo "Installing YADR for the first time"
-    git clone https://github.com/ianks/dotfiles-1.git "$HOME/.yadr"
+    git clone https://github.com/summera/dotfiles.git "$HOME/.yadr"
     cd "$HOME/.yadr"
     [ "$1" = "ask" ] && export ASK="false"
     rake install
@@ -12,7 +12,7 @@ fi
 
 if [ ! -d "$HOME/.yadr_config" ]; then
     echo "Installing YADR config for the first time"
-    git clone https://github.com/ianks/yadr_config.git "$HOME/.yadr_config"
+    git clone https://github.com/summera/yadr_config.git "$HOME/.yadr_config"
     cd "$HOME/.yadr_config"
 
     # Variables
