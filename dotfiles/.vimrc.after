@@ -18,6 +18,8 @@ imap <silent> ∂ _
 imap <silent>  -
 imap <silent> Î -
 
+imap jj <Esc>
+
 " move up/down quickly by using Alt-j, Alt-k
 " which will move us around by functions
 nnoremap <silent> ∆ }
@@ -65,3 +67,18 @@ vmap Å :Tabularize /
 
 " Source current file Alt-% (good for vim development)
 map ﬁ :so %<CR>
+
+" D deletes to the end of the line
+nnoremap D d$
+" Y yanks to the end of the line
+nnoremap Y y$"
+
+vnoremap <leader>p "+p
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
+nnoremap <leader>y "+y
+nnoremap <leader>l :lopen<cr>
+nnoremap <leader>L <C-w>k:lclose<cr><C-w>_
+nnoremap <leader>i i_<Esc>r
+
+command Json execute "%!python -m json.tool"
