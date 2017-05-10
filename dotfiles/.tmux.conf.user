@@ -10,3 +10,8 @@ bind-key -t vi-copy Enter copy-pipe "bash $HOME/.yadr_config/bin/safe-reattach-t
 
 # Status bar
 if-shell "[ -f ~/.tmux.conf.user.status-bar ]" 'source ~/.tmux.conf.user.status-bar'
+
+# Set prefix to Ctrl-Space
+unbind C-b
+set -g prefix C-a
+bind a send-prefix
