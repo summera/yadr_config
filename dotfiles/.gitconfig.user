@@ -1,12 +1,10 @@
 [user]
-  name = Ian Ker-Seymer
-  email = i.kerseymer@gmail.com
+  name = Ari Summer
+  email = aribsummer@gmail.com
 [credential]
   helper = store
 [github]
-  user = ianks
-[ghi]
-  token = !security find-internet-password -a ianks -s github.com -l 'ghi token' -w
+  user = summera
 [alias]
   fixup = !sh -c 'git commit --fixup=$1' -
   squash = !sh -c 'git commit --squash=$1' -
