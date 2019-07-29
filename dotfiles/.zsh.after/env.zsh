@@ -48,6 +48,9 @@ replace(){
   ag -l $1 | xargs perl -pi -E s/$1/$2/
 }
 
+# Android
+export ANDROID_HOME=~/Library/Android/sdk
+
 # vim
 alias vim='nvim'
 alias v='vim'
